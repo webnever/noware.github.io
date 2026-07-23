@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR THE KING</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        img {
+            height: 100vh;
+            width: auto;
+            display: block;
+        }
+
+        /* Container to fix the audio to the left middle */
+        .audio-container {
+            position: absolute;
+            left: 20px; /* Distance from left edge */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        /* Rotating the actual audio element */
+        audio {
+            transform: rotate(-90deg);
+            transform-origin: center;
+            /* Optional: adjusts width since it's now vertical */
+            width: 250px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="audio-container">
+        <audio controls autoplay loop>
+            <source src="king/available.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <img src="king/got-blood.png" alt="CUT">
+
+</body>
+</html>

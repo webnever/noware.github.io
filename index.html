@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOWARE OS</title>
+<style>
+    /* Load the custom retro typeface */
+    @font-face {
+        font-family: 'Tooth31';
+        src: url('./tooth31.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /* Stretch background to fit width and height */
+    body {
+        margin: 0;
+        padding: 40px;
+        min-height: 100vh;
+        background-image: url('./digital/image_2.png');
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+        background-size: 100vw 100vh; /* Stretches the image to fill the viewport */
+        
+        /* INVERTED: Inverted the global text color to white for contrast against dark UI elements */
+        color: #ffffff;
+
+        /* Applied custom font with classic system fallbacks */
+        font-family: 'Tooth31', 'MS Sans Serif', Tahoma, Geneva, sans-serif; 
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: none;
+        font-smooth: never; /* Keeps the custom font pixel-perfect and aliased if it's a bitmap style */
+    }
+
+    /* Layout wrapper to position pillars and window side-by-side */
+    .layout-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px; /* Space between the pillars and the window */
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Pillar styling */
+    .pillar {
+        height: 80vh; /* Scales the pillars to take up most of the vertical space */
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* Flip the right pillar horizontally */
+    .pillar-right {
+        transform: scaleX(-1);
+    }
+
+    /* Windows 98/XP inspired UI container (3D Outset - Inverted Colorway) */
+    .win-container {
+        background-color: #3f3f3f; /* INVERTED: Dark charcoal instead of classic light gray */
+        border-top: 2px solid #000000;   /* INVERTED: Flipped light source direction borders */
+        border-left: 2px solid #000000;
+        border-right: 2px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
+        padding: 20px;
+        width: 100%;
+        max-width: 750px;
+    }
+
+    /* Inner recessed area (3D Inset - Inverted Colorway) */
+    .win-content {
+        background-color: #000000; /* INVERTED: Pitch black container background instead of white */
+        border-top: 2px solid #ffffff;  /* INVERTED: Flipped inner borders */
+        border-left: 2px solid #ffffff;
+        border-right: 2px solid #3f3f3f;
+        border-bottom: 2px solid #3f3f3f;
+        padding: 20px;
+        min-height: 400px;
+    }
+
+    /* Heading configuration */
+    h1 {
+        font-size: 18px;
+        margin-top: 0;
+        border-bottom: 2px groove #000000; /* INVERTED: Dark groove line */
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+    }
+
+    /* Windows 98 File Icon (Base64) */
+    .icon {
+        width: 32px;
+        height: 32px;
+        image-rendering: pixelated; /* Keeps the retro pixel edges sharp */
+    }
+
+    /* Dotted list styling */
+    ul {
+        list-style-type: disc; /* Classic dotted bullets */
+        padding-left: 30px;
+        margin-top: 15px;
+    }
+
+    li {
+        margin-bottom: 8px;
+        border-bottom: 1px dotted #333333; /* INVERTED: Darker dotted line separator */
+        padding-bottom: 4px;
+    }
+
+    /* Classic 90s blue hyperlinks with text-shadow protection for readability on black */
+    a {
+        color: #ffffff; 
+        text-decoration: underline;
+        font-family: 'Tooth31', 'Courier New', Courier, monospace; 
+        font-size: 15px;
+        padding: 0 4px;
+        border-radius: 2px;
+        
+        /* NEW: Turns the link into a row container that pushes content to opposite edges */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* NEW: Explicitly flags the text after /// to right-align if necessary */
+    a span.desc {
+        text-align: right;
+        opacity: 0.8; /* Slight dimming for retro metadata hierarchy */
+    }
+
+    a:visited {
+        color: #ffffff; 
+    }
+
+    a:hover {
+        background-color: #777777; 
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 1000px) {
+        .layout-wrapper {
+            gap: 20px;
+        }
+        .pillar {
+            display: none; /* Hides pillars on smaller screens to keep the window readable */
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="layout-wrapper">
+    <img src="indexPillar.png" alt="Decorative Pillar" class="pillar pillar-left">
+
+    <div class="win-container">
+        <div class="win-content">
+            <h1>
+                <img class="icon" src="digital/folder.png" alt="redirect">
+                / NOWARE OS by ヨY℮ SKIES SEA
+            </h1>
+            <img src="splash2.png"></img>
+            <ul>
+                
+                <li><a href="aetherwebnever_album.html"><span>aether webnever album</span><span class="desc">/// eye skies sea album</span></a></li>
+                <li><a href="aetherwebnever_armour.html"><span>aether webnever armour</span><span class="desc">/// unreleased game</span></a></li>
+                <li><a href="aetherwebnever_novel.html"><span>aether webnever novel</span><span class="desc">/// semi artificial writings</span></a></li>
+                <li><a href="AETHER_WEBNEVER_VALERIE_0.4.zip"><span>aether_webnever_valerie_0.4.zip</span><span class="desc">/// download</span></a></li>
+                <li><a href="valerie/AETHER_WEBNEVER_VALERIE.html"><span>aether webnever valerie</span><span class="desc">/// in browser</span></a></li>
+                <li><a href="artGallery.html"><span>art gallery</span><span class="desc">/// original artwork</span></a></li>
+                <li><a href="bitcoin.html"><span>bitcoin</span></a></li>
+                <li><a href="bluetoothServiceHostile.html"><span>bluetooth service hostile</span></a></li>
+                <li><a href="chainmail.html"><span>chainmail</span></a></li>
+                <li><a href="deathmetalrosepetals.html"><span>deathmetalrosepetals.html</span><span class="desc">/// heartmender2021</span></a></li>
+                <li><a href="djpensionplans.html"><span>djpensionplans</span><span class="desc">/// mixtapes</span></a></li>
+                <li><a href="earth3.html"><span>earth3</span></a></li>
+                <li><a href="esscollex.html"><span>esscollex</span></a></li>
+                <li><a href="excerpts.html"><span>excerpts</span><span class="desc">/// guitar recordings</span></a></li>
+                <li><a href="exoskeletal.html"><span>exoskeletal</span></a></li>
+                <li><a href="grandeBoys.html"><span>grandeBoys.html</span></a></li>
+                <li><a href="journal.html"><span>journal</span></a></li>
+                <li><a href="king.html"><span>king</span><span class="desc">/// got blood? got blood? call 1800-death for a good time</span></a></li>
+                <li><a href="labubu.mp4"><span>labubu.mp4</span><span class="desc">/// no tears</span></a></li>
+                <li><a href="lastlogin.html"><span>last login</span></a></li>
+                <li><a href="LifeIsPain.html"><span>life is pain</span></a></li>
+                <li><a href="m2.html"><span>m2</span></a></li>
+                <li><a href="noclip.html"><span>noclip</span></a></li>
+                <li><a href="notesOnLiberation.html"><span>notes on liberation</span></a></li>
+                <li><a href="p.html"><span>p</span></a></li>
+                <li><a href="projex.html"><span>projex</span></a></li>
+                <li><a href="screenshots.html"><span>screenshots</span></a></li>
+                <li><a href="sTier.html"><span>s tier</span></a></li>
+                <li><a href="tarot.html"><span>tarot</span></a></li>
+                <li><a href="whatisget.html"><span>what is get</span></a></li>
+                <li><a href="youtube.html"><span>youtube channel</span></a></li>
+                <li><a href="contact.html"><span>contaact</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <img src="indexPillar.png" class="pillar pillar-right">
+</div>
+
+</body>
+</html>
